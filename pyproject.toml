@@ -1,0 +1,32 @@
+[project]
+name = "dualpy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.3.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=4.5.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort (imports)
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade (modernize syntax)
+]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
