@@ -1,16 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "dualpy"
 version = "0.1.0"
-description = "Add your description here"
+description = "Lightweight forward-mode automatic differentiation for NumPy"
 readme = "README.md"
+license = {text = "MIT"}
 requires-python = ">=3.11"
-dependencies = [
-    "numpy>=2.3.5",
+authors = [
+    {name = "Hayder"},
 ]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+keywords = [
+    "automatic-differentiation",
+    "dual-numbers",
+    "numpy",
+    "forward-mode",
+    "autodiff",
+]
+dependencies = [
+    "numpy>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hmackk/dualpy"
+Repository = "https://github.com/hmackk/dualpy"
+Changelog = "https://github.com/hmackk/dualpy/blob/main/CHANGELOG.md"
+Issues = "https://github.com/hmackk/dualpy/issues"
 
 [project.optional-dependencies]
 dev = [
+    "build",
     "pre-commit>=4.5.0",
+    "pytest>=8.0",
+    "pytest-cov>=6.0",
+    "ruff",
 ]
 
 [tool.ruff]
@@ -26,6 +62,14 @@ select = [
     "UP", # pyupgrade (modernize syntax)
 ]
 ignore = []
+
+[tool.pytest.ini_options]
+markers = [
+    "unit: isolated single-function tests",
+    "integration: cross-module composition tests",
+    "functional: end-to-end user-workflow tests",
+]
+testpaths = ["tests"]
 
 [tool.ruff.format]
 quote-style = "double"
