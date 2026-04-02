@@ -127,11 +127,11 @@ def jvp(
     """Evaluate ``func`` and its Jacobian-vector product in one forward pass.
 
     This is the most fundamental forward-mode AD primitive.  It seeds a
-    ``DualArray`` with the given tangent vector and propagates both the
+    dual number with the given tangent vector and propagates both the
     primal computation and the directional derivative simultaneously.
 
-    When *primals* is a ``DualArray`` (nested differentiation), the
-    tangent seed is automatically wrapped so that forward-over-forward
+    When used inside another differentiation call (nested differentiation),
+    the tangent seed is automatically wrapped so that forward-over-forward
     second derivatives work correctly.
 
     *primals* may also be a tuple or list of arrays for multi-argument
@@ -142,20 +142,19 @@ def jvp(
     func : callable
         A function ``f(x) -> y`` or ``f(x, y, ...) -> y`` where inputs
         and outputs are scalars or arrays of any shape.
-    primals : array_like, DualArray, or tuple/list thereof
+    primals : array_like or tuple/list thereof
         The point at which to evaluate *func*.  A tuple or list activates
         multi-argument mode where each element is a separate positional
-        argument.  Individual elements may be ``DualArray`` for nested
-        differentiation.
+        argument.
     tangents : array_like or tuple/list thereof
         The tangent (seed) vector(s).  Must match the structure and shapes
         of *primals*.
 
     Returns
     -------
-    primal_out : ndarray or DualArray
+    primal_out : ndarray
         The result of ``func(primals)`` (or ``func(*primals)``).
-    tangent_out : ndarray or DualArray
+    tangent_out : ndarray
         The Jacobian-vector product evaluated at *primals*.
 
     Raises

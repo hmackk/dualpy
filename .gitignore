@@ -41,6 +41,9 @@ venv/
 .idea/
 .vscode/
 
+# Docs
+site/
+
 # Ruff
 .ruff_cache/
 

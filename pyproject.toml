@@ -36,6 +36,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/hmackk/dualpy"
+Documentation = "https://hmackk.github.io/dualpy/"
 Repository = "https://github.com/hmackk/dualpy"
 Changelog = "https://github.com/hmackk/dualpy/blob/main/CHANGELOG.md"
 Issues = "https://github.com/hmackk/dualpy/issues"
@@ -47,6 +48,12 @@ dev = [
     "pytest>=8.0",
     "pytest-cov>=6.0",
     "ruff",
+]
+docs = [
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "mkdocs-gen-files",
+    "mkdocs-literate-nav",
 ]
 
 [tool.ruff]
