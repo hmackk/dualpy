@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
-from dualpy.core import DualArray
 
+from dualpy.core import DualArray
 from tests.conftest import assert_dual_close
 
 pytestmark = pytest.mark.unit

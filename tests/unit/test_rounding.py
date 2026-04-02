@@ -1,5 +1,6 @@
 import numpy as np
 import pytest
+
 from dualpy.core import DualArray
 
 pytestmark = pytest.mark.unit

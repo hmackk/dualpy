@@ -3,6 +3,7 @@ import sys
 
 import numpy as np
 import pytest
+
 from dualpy.core import (
     FUNC_REGISTRY,
     UFUNC_REGISTRY,

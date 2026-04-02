@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
-from dualpy.core import DualArray
 
+from dualpy.core import DualArray
 from tests.conftest import assert_dual_close, assert_tangent_finite, finite_diff_jvp
 
 pytestmark = pytest.mark.unit

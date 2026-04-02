@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
-from dualpy.differentiation import derivative, gradient, hessian, jacobian, jvp
 
+from dualpy.differentiation import derivative, gradient, hessian, jacobian, jvp
 from tests.conftest import finite_diff_jvp
 
 pytestmark = pytest.mark.functional

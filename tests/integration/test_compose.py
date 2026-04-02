@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
+
 from dualpy.core import DualArray
 from dualpy.differentiation import derivative, gradient, hessian, hvp, jacobian, jvp
-
 from tests.conftest import finite_diff_jvp
 
 pytestmark = pytest.mark.integration

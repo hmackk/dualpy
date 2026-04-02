@@ -1,6 +1,7 @@
-import dualpy  # noqa: F401 — triggers ufunc and routine registration
 import numpy as np
 import pytest
+
+import dualpy  # noqa: F401 — triggers ufunc and routine registration
 from dualpy.core import DualArray
 
 
@@ -43,9 +44,9 @@ def assert_tangent_close_to_fd(np_func, x, v=None, rtol=1e-5, **kwargs):
 
 def assert_tangent_finite(result):
     """Assert that all tangent values are finite (no inf/nan)."""
-    assert np.all(
-        np.isfinite(result.tangent)
-    ), f"tangent contains non-finite values: {result.tangent}"
+    assert np.all(np.isfinite(result.tangent)), (
+        f"tangent contains non-finite values: {result.tangent}"
+    )
 
 
 @pytest.fixture

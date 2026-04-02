@@ -1,5 +1,6 @@
 import numpy as np
 import pytest
+
 from dualpy.differentiation import (
     derivative,
     gradient,
@@ -9,7 +10,6 @@ from dualpy.differentiation import (
     jvp,
     nth_derivative,
 )
-
 from tests.conftest import finite_diff_jvp
 
 pytestmark = pytest.mark.integration

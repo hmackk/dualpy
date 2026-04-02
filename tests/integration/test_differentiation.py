@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
-from dualpy.differentiation import jacobian
 
+from dualpy.differentiation import jacobian
 from tests.conftest import finite_diff_jvp
 
 pytestmark = pytest.mark.integration
